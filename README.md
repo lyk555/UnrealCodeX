@@ -148,10 +148,6 @@ npm test
 - The default MCP server port is `3000`.
 - `Binaries/`, `Intermediate/`, and bridge `node_modules/` are excluded from version control.
 
-## Credits
-
-This project is based on `UnrealAIAssistant` by Natali Caggiano, with this repository packaging and publishing the plugin for the `UnrealAIAssistant` distribution.
-
 ## License
 
 MIT. See [LICENSE](LICENSE).
