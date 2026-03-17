@@ -3,7 +3,8 @@
 ![Unreal Engine](https://img.shields.io/badge/Unreal%20Engine-5.5-5c5c5c?logo=unrealengine)
 ![C++](https://img.shields.io/badge/C%2B%2B-20-00599C?logo=c%2B%2B)
 ![Platform](https://img.shields.io/badge/Platform-Win64%20%7C%20Linux%20%7C%20Mac-0078D6)
-![AI](https://img.shields.io/badge/AI-CodeX%20%7C%20Claude%20Code-d0845f)
+![OpenAI CodeX](https://img.shields.io/badge/OpenAI-CodeX-10a37f)
+![Claude Code](https://img.shields.io/badge/Anthropic-Claude%20Code-d0845f)
 ![MCP](https://img.shields.io/badge/MCP-20%2B%20Tools-7a2cff)
 ![License](https://img.shields.io/badge/License-MIT-97CA00)
 
