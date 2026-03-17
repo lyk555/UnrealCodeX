@@ -1,6 +1,6 @@
 # UnrealAIAssistant
 
-UnrealAIAssistant is a UE 5.5 editor plugin repository built around the `UnrealAIAssistant` plugin. It brings Codex CLI into the Unreal Editor, starts a local MCP server inside the editor, and exposes Unreal-specific tools for assets, Blueprints, characters, materials, viewport capture, scripting, and task-based automation.
+UnrealAIAssistant is a UE 5.5 editor plugin repository built around the `UnrealAIAssistant` plugin. It integrates multiple AI coding backends directly into the Unreal Editor, currently supporting CodeX and Claude Code, while exposing Unreal-specific tools for assets, Blueprints, characters, materials, viewport capture, scripting, and task-based automation.
 
 This repository includes:
 
@@ -10,10 +10,11 @@ This repository includes:
 
 ## Highlights
 
-- Dockable Codex panel inside Unreal Editor
+- Dockable assistant panel inside Unreal Editor
+- Backend switching between CodeX and Claude Code
 - Quick Ask action for short prompts without leaving the editor
 - Local MCP server hosted by the plugin on port `3000`
-- MCP bridge that works with Codex CLI and other MCP-compatible clients
+- MCP bridge that works with CodeX, Claude Code, and other MCP-compatible clients
 - Tool coverage for actors, levels, assets, Blueprints, animation Blueprints, materials, Enhanced Input, scripting, viewport capture, and async task management
 - Built-in validation around tool parameters and script execution
 
@@ -34,7 +35,7 @@ This repository includes:
 ## Requirements
 
 - Unreal Engine `5.5.x`
-- Codex CLI installed and authenticated
+- CodeX CLI or Claude Code CLI installed and available on `PATH`
 - Node.js `18+` for the MCP bridge
 - A C++ Unreal project if you want to build from source
 
@@ -50,8 +51,8 @@ Then:
 
 1. Open the project in Unreal Editor.
 2. Enable the `UnrealAIAssistant` plugin if it is not already enabled.
-3. Make sure Codex CLI is installed and available on `PATH`.
-4. Run `codex login`.
+3. Make sure CodeX CLI or Claude Code CLI is installed and available on `PATH`.
+4. Authenticate the backend you plan to use, for example `codex login` for CodeX.
 5. Install MCP bridge dependencies if needed:
 
 ```bash
@@ -65,9 +66,10 @@ npm install
 
 When the editor starts, the plugin:
 
-- Registers a `Codex Assistant` tab in the editor
+- Registers an `assistant` tab in the editor
 - Adds menu and toolbar entries for opening the panel
-- Detects whether Codex CLI is available locally
+- Detects which supported backends are available locally
+- Lets you switch between CodeX and Claude Code from the panel toolbar
 - Starts an in-editor MCP server on `http://localhost:3000`
 
 The included `.mcp.json` points MCP clients to the local bridge:
@@ -123,7 +125,7 @@ Typical local workflow:
 
 1. Generate project files if needed.
 2. Build the Unreal project from Visual Studio or Rider.
-3. Launch the editor and confirm the `Codex` toolbar button is visible.
+3. Launch the editor and confirm the `assistant` toolbar entry is visible and the backend selector lists the installed CLI backends.
 
 ### Tests
 
